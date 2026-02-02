@@ -1,0 +1,12 @@
+{
+  "script": {
+    "code": [
+      "# version: Python3\nfrom DobotEDU import *\nimport time\n\nHOME = (114.74, 125.28, 43.88, 71.06)\nPICK = (226.74, 153.78, -46.54, 57.69)\nC1 = (220.2, -1.53, -13.13, 23.14)\nC2 = (197.66, -95.25, -12.75, -2.19)\nDROP = (149.12, -213.43, -5.93, -31.52)\nROTATE_POS = (174.82, -154.56, 186.47, -44.71)\n\ndef move(pt):\n    magician.ptp(1, pt[0], pt[1], pt[2], pt[3])\n    magician.wait(1)\n\ndef pick_block():\n    move(PICK)\n    magician.set_endeffector_suctioncup(True, True)\n    magician.wait(1)\n\n# Action from VS Code\naction = \"C2_FAST\"\n\nmove(HOME)\npick_block()\n\nif action in [\"C1_FAST\", \"C1_SLOW\"]:\n    move(C1)\nelif action in [\"C2_FAST\", \"C2_SLOW\"]:\n    move(C2)\nelif action == \"DROP\":\n    move(DROP)\nelif action == \"ROTATE\":\n    move(ROTATE_POS)\n\nmagician.set_endeffector_suctioncup(True, False)\nmove(HOME)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "# version: Python3\nfrom DobotEDU import *\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    ],
+    "tabs": [
+      "pyscript1.py",
+      "pyscript2.py"
+    ]
+  }
+}
